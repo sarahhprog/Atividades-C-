@@ -1,0 +1,35 @@
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        double litrosabastecidos, preçolitro, valorcombustivel, valordesconto, valorpagar, desconto = 0;
+        Console.WriteLine("Qual a quantidade de litros abastecidos?");
+        litrosabastecidos = double.Parse(Console.ReadLine());
+
+        Console.WriteLine("Qual o preço do litro?");
+        preçolitro = double.Parse(Console.ReadLine());
+
+        valorcombustivel = preçolitro * litrosabastecidos;
+
+        if (valorcombustivel > 10 && valorcombustivel <= 30)
+        {
+            desconto = valorcombustivel * 0.01;
+        }
+        else if (valorcombustivel > 30 && valorcombustivel <= 40)
+        {
+            desconto = valorcombustivel * 0.02;
+        }
+        else if (valorcombustivel > 40)
+        {
+            desconto = valorcombustivel * 0.025;
+        }
+
+        valorpagar = valorcombustivel - desconto;
+
+        Console.WriteLine($"O valor total do combustível é: {valorcombustivel}");
+        Console.WriteLine($"O valor total de desconto é: {desconto}");
+        Console.WriteLine($"O valor total que deve ser pago é: {valorpagar}");
+    }
+}
