@@ -1,0 +1,35 @@
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        string candidato1, candidato2;
+        int votocandidato1, votocandidato2;
+
+        Console.WriteLine("Diga o nome do primeiro candidato:");
+        candidato1 = Console.ReadLine();
+
+        Console.WriteLine("Diga o nome do segundo candidato:");
+        candidato2 = Console.ReadLine();
+
+        Console.WriteLine($"Diga o número de votos para o {candidato1}:");
+        votocandidato1 = int.Parse(Console.ReadLine());
+
+        Console.WriteLine($"Diga o número de votos para o {candidato2}:");
+        votocandidato2 = int.Parse(Console.ReadLine());
+
+        if (votocandidato1 > votocandidato2)
+        {
+            Console.WriteLine($"{candidato1} é o vencedor da eleição.");
+        }
+        else if (votocandidato2 > votocandidato1)
+        {
+            Console.WriteLine($"{candidato2} é o vencedor da eleição.");
+        }
+        else
+        {
+            Console.WriteLine("Houve um empate na eleição.");
+        }
+    }
+}
